@@ -8,8 +8,12 @@ public class NextLevelScript : MonoBehaviour
     
    public void PlayNextLevel()
     {
-        PlayerPrefs.SetInt("Current Level", DataScript.currentLevel + 1);
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        if(DataScript.currentLevel < 3)
+        {
+            PlayerPrefs.SetInt("Current Level", DataScript.currentLevel + 1);
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
+        
     }
 }
